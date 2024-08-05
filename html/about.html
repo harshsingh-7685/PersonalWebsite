@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Singh's Personal Webpage</title>
+    
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header section -->
+        <header>
+            <h1>Harsh Singh</h1>
+            <nav>
+                <ul>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+            <!-- About me section -->
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I am Harsh Singh, a computer science student at Rutgers University, expected to graduate in May 2025. 
+                    I have a passion for software development and experience in AI, cloud computing, and more. 
+                    Currently, I'm interning at Kiddie Academy, developing a 
+                    data extraction project using LLaMA 3 on AWS EC2.</p>
+            </section>
+
+            <!-- Image section -->
+            <section id="image">
+                <img src="hs.jpg" alt="Harsh Singh" width="421" height="561">
+            </section>
+        </div>
+
+        <footer>
+            <p>Harsh Singh, Updated <span id="last-updated"></span></p>
+
+            <!-- Script to fetch and display the last modified date -->
+            <script>
+                function fetchLastModified() {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('HEAD', window.location.href, true);
+
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                        var lastModified = new Date(xhr.getResponseHeader("Last-Modified"));
+                        var options = { year: 'numeric', month: 'long', day: 'numeric' };
+                        document.getElementById('last-updated').textContent = lastModified.toLocaleDateString(undefined, options);
+                        }
+                    };
+                    
+                    xhr.send(null);
+                }
+            
+                // Call the function to fetch and display the last modified date
+                fetchLastModified();
+            </script>
+        </footer>
+    </div>
+</body>
+</html>

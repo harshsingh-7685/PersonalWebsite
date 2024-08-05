@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Singh's Personal Webpage</title>
+    
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Header section -->
+        <header>
+            <h1>Harsh Singh</h1>
+            <nav>
+                <ul>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+            <!-- Experience section -->
+            <section id="experience">
+                <h2>Experience</h2>
+                <div class="position">
+                    <h3>Kiddie Academy of Langhorne, PA</h3>
+                    <p>Software Developer Intern, June 2024 – Present</p>
+                    <ul>
+                        <li>Developing a data extraction project using Llama 3 hosted on an AWS EC2 
+                            instance to automate the extraction of important information from PDFs of 
+                            new and updated applications.</li>
+                        <li>Implementing a system to upload PDFs to the Llama 3 model for data extraction using Python</li>
+                        <li>Collaborating with team members and software vendors to ensure seamless 
+                            functionality and reliability of the project.</li>
+                        <li>Demonstrating strong problem-solving skills and attention to detail in ensuring 
+                            accurate extraction and database integration.</li>
+                    </ul>
+                </div>
+                <div class="position">
+                    <h3>Alfa Art Gallery, New Brunswick, NJ</h3>
+                    <p>Gallery Assistant & Web/PR/Communication/Social Media Intern, August 2023 – January 2024</p>
+                    <ul>
+                        <li>Responsible for maintaining and updating the gallery’s website and blog using WordPress, 
+                            HTML, and CSS technologies.</li>
+                        <li>Assisted with developing marketing skills to promote events and better reach our audience.</li>
+                        <li>Responsible for the gallery’s social media presence on various platforms.</li>
+                        <li>Responsible for maintaining and building the gallery’s relationships with patrons and artists.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>Harsh Singh, Updated <span id="last-updated"></span></p>
+    
+            <!-- Script to fetch and display the last modified date -->
+            <script>
+                function fetchLastModified() {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('HEAD', window.location.href, true);
+                    xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var lastModified = new Date(xhr.getResponseHeader("Last-Modified"));
+                        var options = { year: 'numeric', month: 'long', day: 'numeric' };
+                        document.getElementById('last-updated').textContent = lastModified.toLocaleDateString(undefined, options);
+                    }
+                    };
+                    xhr.send(null);
+                }
+            
+                // Call the function to fetch and display the last modified date
+                fetchLastModified();
+                </script>
+        </footer>
+    </div>
+</body>
+</html>
